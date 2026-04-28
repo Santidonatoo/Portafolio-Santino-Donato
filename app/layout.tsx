@@ -1,53 +1,64 @@
-import type { Metadata } from 'next'
-import { Space_Grotesk, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata } from "next";
+import { Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-})
+});
 
 export const metadata: Metadata = {
-  title: 'Santino Donato | Backend Developer',
-  description: 'Estudiante de Licenciatura en Sistemas en UNLa. Apasionado por el desarrollo backend, Java, Kotlin y Spring.',
-  keywords: ['Backend Developer', 'Java', 'Kotlin', 'Spring', 'UNLa', 'Santino Donato'],
-  authors: [{ name: 'Santino Donato' }],
+  title: "Santino Donato | Software Developer",
+  description:
+    "Estudiante de Licenciatura en Sistemas en UNLa. Apasionado por el desarrollo de software.",
+  keywords: [
+    "Software Developer",
+    "Java",
+    "Kotlin",
+    "Spring",
+    "Sistemas",
+    "UNLa",
+    "Santino Donato",
+  ],
+  authors: [{ name: "Santino Donato" }],
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
       },
       {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: "/icon.svg",
+        type: "image/svg+xml",
       },
     ],
-    apple: '/apple-icon.png',
+    apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body
+        className={`${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased`}
+      >
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
-  )
+  );
 }

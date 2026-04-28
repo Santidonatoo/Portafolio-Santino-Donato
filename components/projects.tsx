@@ -130,7 +130,7 @@ export function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
+                <p className="text-muted-foreground mb-4 leading-relaxed grow">
                   {project.description}
                 </p>
 

@@ -94,20 +94,45 @@ export function Hero() {
           en equipo. Proactivo, organizado y en constante aprendizaje.
         </motion.p>
 
-        <motion.a
-          href="#proyectos"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 0 30px rgba(0, 191, 255, 0.4)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 neon-glow"
+          className="mx-auto grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-3"
         >
-          Ver proyectos
-        </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/santinodonato"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary/40 text-foreground font-semibold rounded-lg transition-all duration-300 hover:border-primary"
+          >
+            LinkedIn
+          </motion.a>
+
+          <motion.a
+            href="#proyectos"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(0, 191, 255, 0.4)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 neon-glow"
+          >
+            Ver proyectos
+          </motion.a>
+
+          <motion.a
+            href="/CV%20Santino%20Donato.pdf"
+            download
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary/40 text-foreground font-semibold rounded-lg transition-all duration-300 hover:border-primary"
+          >
+            Descargar CV
+          </motion.a>
+        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
