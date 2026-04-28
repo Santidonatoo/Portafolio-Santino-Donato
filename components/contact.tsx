@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
   {
@@ -19,7 +19,7 @@ const socialLinks = [
     href: "mailto:santinodonato1@gmail.com",
     icon: Mail,
   },
-]
+];
 
 export function Contact() {
   return (
@@ -32,11 +32,11 @@ export function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            ¿Hablamos?
+            ¡Contactame!
           </h2>
           <p className="text-muted-foreground text-lg mb-12 max-w-xl mx-auto">
             Siempre abierto a nuevas oportunidades y proyectos. No dudes en
-            contactarme.
+            escribirme.
           </p>
 
           <div className="flex items-center justify-center gap-8">
@@ -81,5 +81,5 @@ export function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

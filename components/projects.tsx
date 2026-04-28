@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
 
 // ============================================================
 // EDITABLE PROJECTS DATA
@@ -9,6 +9,24 @@ import { Github, ExternalLink } from "lucide-react"
 // following the same structure as the existing projects.
 // ============================================================
 const projects = [
+  {
+    title: "Nitrec",
+    type: "E-commerce",
+    description:
+      "Pagina de e-commerce para Nitrec, fabricante de bicicletas de spinning, articulos de gimnasio y repuestos. Incluye catalogo, carrito y checkout con panel admin conectado a base de datos.",
+    tags: [
+      "E-commerce",
+      "Responsive",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+    image: "/images/projects/nitrec-home.webp",
+    imageAlt: "Inicio del e-commerce de Nitrec",
+    github: "https://github.com/Santidonatoo/Nitrec",
+    demo: "https://nitrec.vercel.app/",
+  },
   {
     title: "API REST con Spring Boot",
     description:
@@ -33,7 +51,7 @@ const projects = [
   //   github: "https://github.com/...",
   //   demo: "https://..." or null,
   // },
-]
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -43,7 +61,7 @@ const containerVariants = {
       staggerChildren: 0.2,
     },
   },
-}
+};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -52,7 +70,7 @@ const cardVariants = {
     y: 0,
     transition: { duration: 0.6 },
   },
-}
+};
 
 export function Projects() {
   return (
@@ -91,10 +109,27 @@ export function Projects() {
               className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300"
             >
               <div className="flex flex-col h-full">
+                {project.image && (
+                  <div className="mb-5 overflow-hidden rounded-lg border border-border bg-background/40">
+                    <img
+                      src={project.image}
+                      alt={project.imageAlt || project.title}
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+
+                {project.type && (
+                  <span className="text-xs uppercase tracking-widest text-primary/80 mb-2">
+                    {project.type}
+                  </span>
+                )}
+
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                   {project.description}
                 </p>
@@ -144,5 +179,5 @@ export function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
