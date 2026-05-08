@@ -95,7 +95,7 @@ export function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="grid md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
@@ -103,7 +103,7 @@ export function Projects() {
               key={index}
               variants={cardVariants}
               whileHover={{
-                y: -8,
+                scale: 1.02,
                 boxShadow: "0 0 30px rgba(0, 191, 255, 0.2)",
               }}
               className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300"
@@ -121,7 +121,7 @@ export function Projects() {
                 )}
 
                 {project.type && (
-                  <span className="text-xs uppercase tracking-widest text-primary/80 mb-2">
+                  <span className="text-xs uppercase tracking-widest text-primary/80 mb-2 neon-glow-text">
                     {project.type}
                   </span>
                 )}

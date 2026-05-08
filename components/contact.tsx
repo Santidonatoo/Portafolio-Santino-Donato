@@ -75,8 +75,8 @@ export function Contact() {
         >
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} Santino Donato. Hecho con{" "}
-            <span className="text-primary">Next.js</span> &{" "}
-            <span className="text-primary">Tailwind CSS</span>
+            <span className="text-primary neon-glow-text">Next.js</span> &{" "}
+            <span className="text-primary neon-glow-text">Tailwind CSS</span>
           </p>
         </motion.div>
       </div>
