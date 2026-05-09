@@ -13,7 +13,7 @@ const projects = [
     title: "Nitrec",
     type: "E-commerce",
     description:
-      "Pagina de e-commerce para Nitrec, fabricante de bicicletas de spinning, articulos de gimnasio y repuestos. Incluye catalogo, carrito y checkout con panel admin conectado a base de datos.",
+      "Pagina de e-commerce para Nitrec, fabricante de bicicletas de spinning, articulos de gimnasio y repuestos. Incluye catalogo, carrito, pasarela de pago y checkout con panel admin conectado a base de datos.",
     tags: [
       "E-commerce",
       "Responsive",
@@ -28,20 +28,39 @@ const projects = [
     demo: "https://nitrec.vercel.app/",
   },
   {
-    title: "API REST con Spring Boot",
+    title: "Sistema de turnos con Spring Boot",
     description:
-      "API RESTful desarrollada con Spring Boot y Kotlin. Implementa autenticación JWT, validación de datos y conexión con MySQL.",
-    tags: ["Kotlin", "Spring Boot", "MySQL", "JWT"],
-    github: "https://github.com/Santidonatoo",
+      "Sistema de gestión de turnos desarrollado con Spring Boot, utilizando MySQL para la persistencia de datos a traves de Spring Data JPA, Seguridad con Spring Security, DTOs con ModelMapper y validaciones con Spring Validation. Documentación de la API con Swagger.",
+    tags: [
+      "Spring Boot",
+      "MySQL",
+      "Spring Data JPA",
+      "Spring Security",
+      "ModelMapper",
+      "Spring Validation",
+      "Swagger",
+    ],
+    github: "https://github.com/Santidonatoo/TP-OO2-G5-Spring",
     demo: null, // Set to URL string if there's a live demo
   },
   {
-    title: "Sistema de Gestión Universitaria",
+    title: "Adora Pastelería ",
+    type: "Landing page",
     description:
-      "Aplicación de escritorio para gestionar estudiantes, materias y calificaciones. Desarrollada en Java con patrón MVC.",
-    tags: ["Java", "MySQL", "MVC", "Swing"],
-    github: "https://github.com/Santidonatoo",
-    demo: null,
+      "Landing page para Adora Pastelería, una pastelería artesanal. La página incluye secciones de productos, contacto y testimonios, con un diseño moderno y atractivo.",
+
+    tags: [
+      "Landing Page",
+      "Responsive",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+    image: "/images/projects/adora-home.webp",
+    imageAlt: "Inicio de la landing page de Adora Pastelería",
+    github: "https://github.com/Santidonatoo/portafolio-adora",
+    demo: "https://portafolio-adora.vercel.app/",
   },
   // Add more projects here following the same structure:
   // {
@@ -95,7 +114,7 @@ export function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
@@ -103,7 +122,7 @@ export function Projects() {
               key={index}
               variants={cardVariants}
               whileHover={{
-                scale: 1.02,
+                y: -8,
                 boxShadow: "0 0 30px rgba(0, 191, 255, 0.2)",
               }}
               className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300"
@@ -121,7 +140,7 @@ export function Projects() {
                 )}
 
                 {project.type && (
-                  <span className="text-xs uppercase tracking-widest text-primary/80 mb-2 neon-glow-text">
+                  <span className="text-xs uppercase tracking-widest text-primary/80 mb-2">
                     {project.type}
                   </span>
                 )}
