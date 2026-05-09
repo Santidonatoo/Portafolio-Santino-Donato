@@ -40,6 +40,8 @@ const projects = [
       "Spring Validation",
       "Swagger",
     ],
+    image: "/images/projects/tpoo2-home.webp",
+    imageAlt: "Página de inicio del sistema de turnos con Spring Boot",
     github: "https://github.com/Santidonatoo/TP-OO2-G5-Spring",
     demo: null, // Set to URL string if there's a live demo
   },
